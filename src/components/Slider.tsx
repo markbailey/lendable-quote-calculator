@@ -6,7 +6,7 @@ type KeyboadEvent = React.KeyboardEvent | globalThis.KeyboardEvent;
 type MouseEvent = React.MouseEvent | globalThis.MouseEvent;
 type NotchesProps = { count: number; current: number };
 
-export type SliderProps = Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> & {
+export interface SliderProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   value: number;
   min: number;
   max: number;
@@ -14,7 +14,7 @@ export type SliderProps = Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> & {
   notches?: boolean;
   onChange(value: number): void;
   className?: string;
-};
+}
 
 const Notches = ({ count, current }: NotchesProps) => (
   <div>
