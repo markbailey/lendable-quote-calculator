@@ -4,6 +4,7 @@
 
 :root {
   --btn-br: 0.0625rem solid;
+  --btn-trans: 0.2s ease-in-out;
 }
 
 .button {
@@ -16,9 +17,10 @@
   border-radius: var(--rounded-4);
   font-size: var(--fs-normal);
   font-family: var(--font-family);
+  transition: transform var(--btn-trans);
 
   > svg {
-    transition: transform 0.2s ease-in-out;
+    transition: transform var(--btn-trans);
   }
 
   &:not(:disabled) {
@@ -28,6 +30,10 @@
 
   &:not(:disabled, :active):hover > svg {
     transform: translateX(0.25rem);
+  }
+
+  &:not(:disabled):active {
+    transform: scale(0.95);
   }
 }
 
