@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+:root {
+  // Typography
+  --font-family: #{$fontFamily};
+  --fs-normal: #{map.get($fontSizes, 'normal')};
+  --fs-small: #{map.get($fontSizes, 'small')};
+  --fs-large: #{map.get($fontSizes, 'large')};
+  --fs-xlarge: #{map.get($fontSizes, 'xlarge')};
+  --fw-normal: #{map.get($fontWeights, 'normal')};
+  --fw-light: #{map.get($fontWeights, 'light')};
+  --lh-normal: #{map.get($lineHeights, 'normal')};
+  --lh-small: #{map.get($lineHeights, 'small')};
+
+  // Colors
+  --primary: #{map.get($colors, 'primary')};
+  --primary-pale: #{map.get($colors, 'primary-pale')};
+  --primary-rgb: #{map.get($colors, 'primary-rgb')};
+  --red: #{map.get($colors, 'red')};
+  --hot-pink: #{map.get($colors, 'hot-pink')};
+  --purple: #{map.get($colors, 'purple')};
+  --black: #{map.get($colors, 'black')};
+  --white: #{map.get($colors, 'white')};
+  --off-white: #{map.get($colors, 'off-white')};
+  --grey: #{map.get($colors, 'grey')};
+
+  --bg-base: var(--purple);
+  --text-base: var(--black);
+
+  // Sizes
+  --full: 100%;
+  --screen-h: 100vh;
+
+  // Spacings
+  --spacing-0: #{map.get($spacings, '0')};
+  --spacing-1: #{map.get($spacings, '1')};
+  --spacing-2: #{map.get($spacings, '2')};
+  --spacing-3: #{map.get($spacings, '3')};
+  --spacing-4: #{map.get($spacings, '4')};
+  --spacing-5: #{map.get($spacings, '5')};
+  --spacing-6: #{map.get($spacings, '6')};
+  --spacing-8: #{map.get($spacings, '8')};
+
+  // Border Radius
+  --rounded-0: #{map.get($borderRadius, '0')};
+  --rounded-2: #{map.get($borderRadius, '2')};
+  --rounded-4: #{map.get($borderRadius, '4')};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: var(--spacing-0);
+  height: var(--full);
+  min-height: var(--screen-h);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-normal);
+
+  color: var(--text-base);
+  background: var(--bg-base);
+  background: linear-gradient(45deg, var(--hot-pink) 0%, var(--purple) 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: var(--full);
+}
+
+#root {
+  @media (min-width: 26.5rem) {
+    display: grid;
+    place-content: center;
+  }
+}

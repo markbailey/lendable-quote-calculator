@@ -1,0 +1,20 @@
+{
+  "currency": {
+    "name": "GBP",
+    "symbol": "£"
+  },
+  "amount": {
+    "range": [1000, 20000],
+    "step": 100
+  },
+  "term": {
+    "range": [12, 60],
+    "step": 6
+  },
+  "interestRates": [
+    { "range": [1000, 4999], "percent": 5 },
+    { "range": [5000, 9999], "percent": 10 },
+    { "range": [10000, 14999], "percent": 15 },
+    { "range": [15000, 20000], "percent": 20 }
+  ]
+}

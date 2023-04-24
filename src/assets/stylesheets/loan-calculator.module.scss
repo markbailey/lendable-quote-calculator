@@ -1,0 +1,94 @@
+:root {
+  --form-br: var(--rounded-2) var(--rounded-2);
+  --form-w: 18.75rem;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  width: var(--full);
+  height: var(--screen-h);
+  color: var(--black);
+  background-color: var(--white);
+
+  @media (min-width: 26.5rem) {
+    min-width: var(--form-w);
+    height: auto;
+    border-radius: var(--form-br);
+
+    > :first-child {
+      border-radius: var(--form-br) 0 0;
+    }
+
+    > :last-child {
+      border-radius: 0 0 var(--form-br);
+    }
+  }
+}
+
+.sliderOptions,
+.repayments,
+.actions {
+  padding: var(--spacing-8);
+}
+
+.repayments {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacing-5);
+  background-color: var(--off-white);
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    text-align: center;
+  }
+}
+
+.actions {
+  background-color: var(--black);
+}
+
+.sliderGroup {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: var(--spacing-5);
+
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-5);
+  }
+}
+
+.sliderLabel {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--spacing-2);
+
+  > span:first-child {
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-normal);
+  }
+}
+
+.sliderValue {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-light);
+}
+
+.repaymentValue {
+  font-size: var(--fs-xlarge);
+  font-weight: var(--fw-light);
+}
+
+.repaymentLabel {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-normal);
+}
+
+.sliderValue,
+.repaymentValue {
+  color: var(--grey);
+  line-height: var(--lh-small);
+}

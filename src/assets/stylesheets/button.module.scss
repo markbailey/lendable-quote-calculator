@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as *;
+
+:root {
+  --btn-br: 0.0625rem solid;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-1);
+  text-transform: capitalize;
+  padding: var(--spacing-4) var(--spacing-5);
+  border-radius: var(--rounded-4);
+  font-size: var(--fs-normal);
+  font-family: var(--font-family);
+
+  > svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:not(:disabled) {
+    border: var(--btn-br);
+    cursor: pointer;
+  }
+
+  &:not(:disabled):hover > svg {
+    transform: translateX(0.25rem);
+  }
+}
+
+.block {
+  width: var(--full);
+}
+
+.primary:not(:disabled) {
+  --btn-bg: var(--primary);
+  color: var(--white);
+  background-color: var(--btn-bg);
+  border: var(--btn-br) var(--btn-bg);
+
+  &:hover {
+    --btn-bg: #{color.change(map.get($colors, 'primary'), $lightness: 60%)};
+  }
+
+  &:active {
+    --btn-bg: #{color.change(map.get($colors, 'primary'), $lightness: 40%)};
+  }
+}
