@@ -34,4 +34,4 @@ Boots up a local static web server that serves the files from dist at [`http://l
 
 ### `npm run test`
 
-Command to run automated tests. It executes the test scripts defined in the "scripts" section of the package.json file using the test runner Jest.
+Command to run automated tests. It executes the test scripts defined in the "scripts" section of the `package.json` file using the test runner Jest.
