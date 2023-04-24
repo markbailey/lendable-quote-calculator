@@ -2,11 +2,10 @@ import { ButtonHTMLAttributes } from 'react';
 import classNames from 'classnames';
 import styles from '../assets/stylesheets/button.module.scss';
 
-type ElementProps = ButtonHTMLAttributes<HTMLButtonElement>;
-export type ButtonProps = {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   block?: boolean;
   primary?: boolean;
-} & ElementProps;
+}
 
 function Button(props: ButtonProps) {
   const { children, className: classNameProp, block, primary, ...otherProps } = props;
