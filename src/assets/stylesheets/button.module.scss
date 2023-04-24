@@ -26,7 +26,7 @@
     cursor: pointer;
   }
 
-  &:not(:disabled):hover > svg {
+  &:not(:disabled, :active):hover > svg {
     transform: translateX(0.25rem);
   }
 }
